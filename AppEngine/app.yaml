@@ -1,6 +1,12 @@
 runtime: python27 
 api_version: 1 
-threadsafe: false 
+threadsafe: false
 handlers: 
-- url: /.*   
-  script: main.py
+- url: /cgi   
+  script: cgimain.py
+
+- url: /wsgi
+  script: wsgiapp.wsgimain
+
+- url: /
+  script: main.app
