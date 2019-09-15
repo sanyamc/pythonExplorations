@@ -1,7 +1,9 @@
-import os
+from flask import Flask, escape, request
 
-print 'Content-Type: text/plain' 
-print '' 
 
-for env in os.environ:
-    print env ,": " , os.environ[env]
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    name = request.args.get("name", "World")
+    return 'Hello, from Flask!'
