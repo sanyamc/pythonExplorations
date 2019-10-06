@@ -8,5 +8,5 @@ handlers:
 - url: /wsgi
   script: wsgiapp.wsgimain
 
-- url: /
+- url: /.*
   script: main.app
